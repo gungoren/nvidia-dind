@@ -31,6 +31,8 @@ ADD https://raw.githubusercontent.com/moby/moby/master/hack/dind /usr/local/bin/
 
 RUN chmod +x /usr/local/bin/dockerd-entrypoint.sh /usr/local/bin/docker-entrypoint.sh /usr/local/bin/dind
 
+COPY docker-shim.sh /usr/local/bin/docker
+
 VOLUME /var/lib/docker
 EXPOSE 2375 2376
 
